@@ -12,6 +12,8 @@ This is a small demo project to show you how to expose RESTful web services in a
 
 From the project root, `mvn install` will compile the bundle and put it in your local maven repository.  From there, you can deploy into your OSGi runtime as usual.  For Karaf, the easiest way is to copy the islandora-web-service-1.0-SNAPSHOT.jar from the `target` directory to the `deploy` folder of your Karaf installation.
 
+You'll also need to make sure to install the cxf feature in Karaf, like so: `feature:install cxf`.
+
 ## Usage
 
 This demo service yells back at you.  Whatever message you send it gets converted to uppercase and is returned as `text/plain` response.  By default, all web services are exposed off of a ‘root’ endpoint of `/cxf`, so your service should be available at `localhost:8181/cxf/shout`.
